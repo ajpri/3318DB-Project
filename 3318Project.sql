@@ -126,6 +126,27 @@ INSERT INTO `Photographers` (`firstName`, `lastName`, `address`, `ContactNumber`
 ('Darth', 'Vador', '999 Resistance Way', '9999999999', 'Space City', 'Texas', '11111');
 
 --
+-- Table structure for table `UpcomingShoots`
+--
+
+CREATE TABLE `UpcomingShoots` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `locationContactNumber` varchar(45) NOT NULL,
+  `photographerContactNumber` varchar(45) NOT NULL,
+  `modelContactNumber` varchar(45) NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `UpcomingShoots`
+--
+
+INSERT INTO `UpcomingShoots` (`locationContactNumber`, `photographerContactNumber`, `modelContactNumber`) VALUES
+('7136220663', '7132218000', '7657619281'),
+('7139879479', '7132218000', '7707760811'),
+('8479128143','9999999999','8324093442');
+
+--
 -- Indexes for dumped tables
 --
 
