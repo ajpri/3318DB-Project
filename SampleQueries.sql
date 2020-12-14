@@ -22,3 +22,14 @@ WHERE state IN ('TX', 'Texas');
 
 SELECT * FROM models
 WHERE age BETWEEN 20 AND 25;
+
+--
+-- 3- Photo shoot cancelled
+--
+DELETE FROM `UpcomingShoots` WHERE `UpcomingShoots`.`id` = 3"
+
+--
+-- 4- New Model
+--
+
+INSERT INTO `Models` (`firstName`, `lastName`, `age`, `address`, `ContactNumber`, `city`, `state`, `zipCode`) VALUES ('Bill', 'Gates', '53', '1 Infinite Loop', '3334445555', 'Cupertino', 'California', '90923');
