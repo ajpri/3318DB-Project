@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 13, 2020 at 10:58 PM
+-- Generation Time: Dec 14, 2020 at 05:36 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -68,8 +68,8 @@ CREATE TABLE `Locations` (
 
 INSERT INTO `Locations` (`name`, `address`, `ContactNumber`, `city`, `state`, `zipCode`) VALUES
 ('Houston Galleria', '5085 Westheimer Rd', '7136220663', 'Houston', 'Texas', '77056'),
-('Pine Sol', '9410 Fuqua', '7139879479', 'Houston', 'TX', '77075'),
-('Rock Peak', '845 Watters Rd', '8451784343', 'Philadelphia', 'Pennstlvania', '71333'),
+('Pine Sol', '9410 Fuqua', '7139879479', 'Houston', 'Texas', '77075'),
+('Rock Peak', '845 Watters Rd', '8451784343', 'Philadelphia', 'Pennsylvania', '71333'),
 ('Green Park', '843 Windy Blvd', '8479128143', 'Pasadena', 'Texas', '77034');
 
 -- --------------------------------------------------------
@@ -120,32 +120,33 @@ CREATE TABLE `Photographers` (
 --
 
 INSERT INTO `Photographers` (`firstName`, `lastName`, `address`, `ContactNumber`, `city`, `state`, `zipCode`) VALUES
-('John', 'Moore', '14 Golly Ave', '13e	4132238696', 'Chicago', 'Illinois', '44474'),
+('John', 'Moore', '14 Golly Ave', '1341322386', 'Chicago', 'Illinois', '44474'),
 ('Univ', 'ofHous', '1 Main St', '7132218000', 'Houston', 'Texas', '77002'),
 ('Philip', 'Sherman', '42 Wallaby Way', '8674443919', 'Sydney', 'California', '91434'),
 ('Darth', 'Vador', '999 Resistance Way', '9999999999', 'Space City', 'Texas', '11111');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `UpcomingShoots`
 --
 
 CREATE TABLE `UpcomingShoots` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `locationContactNumber` varchar(45) NOT NULL,
   `photographerContactNumber` varchar(45) NOT NULL,
   `modelContactNumber` varchar(45) NOT NULL,
-  `dateTime` DATETIME NOT NULL,
-  PRIMARY KEY (id)
+  `dateTime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `UpcomingShoots`
 --
 
-INSERT INTO `UpcomingShoots` (`locationContactNumber`, `photographerContactNumber`, `modelContactNumber`, 'dateTime') VALUES
-('7136220663', '7132218000', '7657619281', '2021-01-01 13:00:00'),
-('7139879479', '7132218000', '7707760811', '2021-01-01 18:00:00'),
-('8479128143','9999999999','8324093442', '2021-03-15 09:00:00');
+INSERT INTO `UpcomingShoots` (`id`, `locationContactNumber`, `photographerContactNumber`, `modelContactNumber`, `dateTime`) VALUES
+(1, '7136220663', '7132218000', '7657619281', '2021-01-01 13:00:00'),
+(2, '7139879479', '7132218000', '7707760811', '2021-01-01 18:00:00'),
+(3, '8479128143', '9999999999', '8324093442', '2021-03-15 09:00:00');
 
 --
 -- Indexes for dumped tables
@@ -174,6 +175,22 @@ ALTER TABLE `Models`
 --
 ALTER TABLE `Photographers`
   ADD PRIMARY KEY (`ContactNumber`);
+
+--
+-- Indexes for table `UpcomingShoots`
+--
+ALTER TABLE `UpcomingShoots`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `UpcomingShoots`
+--
+ALTER TABLE `UpcomingShoots`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
