@@ -134,6 +134,7 @@ CREATE TABLE `UpcomingShoots` (
   `locationContactNumber` varchar(45) NOT NULL,
   `photographerContactNumber` varchar(45) NOT NULL,
   `modelContactNumber` varchar(45) NOT NULL,
+  `dateTime` DATETIME NOT NULL,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -141,10 +142,10 @@ CREATE TABLE `UpcomingShoots` (
 -- Dumping data for table `UpcomingShoots`
 --
 
-INSERT INTO `UpcomingShoots` (`locationContactNumber`, `photographerContactNumber`, `modelContactNumber`) VALUES
-('7136220663', '7132218000', '7657619281'),
-('7139879479', '7132218000', '7707760811'),
-('8479128143','9999999999','8324093442');
+INSERT INTO `UpcomingShoots` (`locationContactNumber`, `photographerContactNumber`, `modelContactNumber`, 'dateTime') VALUES
+('7136220663', '7132218000', '7657619281', '2021-01-01 13:00:00'),
+('7139879479', '7132218000', '7707760811', '2021-01-01 18:00:00'),
+('8479128143','9999999999','8324093442', '2021-03-15 09:00:00');
 
 --
 -- Indexes for dumped tables
